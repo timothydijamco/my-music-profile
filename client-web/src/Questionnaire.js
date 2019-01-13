@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import QuestionnaireField from './QuestionnaireField'
+import axios from 'axios';
 
 class Questionnaire extends Component {
    constructor(props) {
@@ -7,12 +8,21 @@ class Questionnaire extends Component {
       this.state = {};
 
       this.handleFieldChange = this.handleFieldChange.bind(this);
+      this.submitQuestionnaire = this.submitQuestionnaire.bind(this);
    }
 
    handleFieldChange(event) {
       this.setState({ // See https://reactjs.org/docs/forms.html#handling-multiple-inputs
          [event.target.name]: event.target.value
       });
+   }
+
+   submitQuestionnaire() {
+      axios.post("/api/profile", this.state)
+         .then(res => {
+            window.location = "/" + res.data.code;
+         })
+         .catch(err => console.log(err));
    }
 
    render() {
@@ -24,6 +34,7 @@ class Questionnaire extends Component {
             <QuestionnaireField label="First Show" name="firstShow" onValueChange={this.handleFieldChange} />
             <QuestionnaireField label="Most Recent Show" name="mostRecentShow" onValueChange={this.handleFieldChange} />
             <QuestionnaireField label="Favorite Show" name="favoriteShow" onValueChange={this.handleFieldChange} />
+            <button type="button" onClick={this.submitQuestionnaire}>Create Profile</button>
          </form>
       );
    }
