@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './QuestionnaireField.css';
 
 class QuestionnaireField extends Component {
    constructor(props) {
@@ -12,10 +13,10 @@ class QuestionnaireField extends Component {
 
    render() {
       return (
-         <fieldset>
-            <legend>{this.props.label}</legend>
-            <input type="text" name={this.props.name} value={this.props.value} onChange={this.handleChange} />
-         </fieldset>
+         <div className="QuestionnaireField">
+            <legend className="QuestionnaireField-label">{this.props.label}</legend>
+            <input className="QuestionnaireField-input" type="text" name={this.props.name} value={this.props.value} onChange={this.handleChange} />
+         </div>
       );
    }
 }

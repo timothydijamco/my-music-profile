@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import QuestionnaireField from './QuestionnaireField'
 import axios from 'axios';
+import './Questionnaire.css';
 
 class Questionnaire extends Component {
    constructor(props) {
@@ -27,15 +28,19 @@ class Questionnaire extends Component {
 
    render() {
       return (
-         <form>
-            <QuestionnaireField label="Favorite Artist" name="favoriteArtist" onValueChange={this.handleFieldChange} />
-            <QuestionnaireField label="Favorite Album/EP" name="favoriteAlbumEp" onValueChange={this.handleFieldChange} />
-            <QuestionnaireField label="Favorite Track" name="favoriteTrack" onValueChange={this.handleFieldChange} />
-            <QuestionnaireField label="First Show" name="firstShow" onValueChange={this.handleFieldChange} />
-            <QuestionnaireField label="Most Recent Show" name="mostRecentShow" onValueChange={this.handleFieldChange} />
-            <QuestionnaireField label="Favorite Show" name="favoriteShow" onValueChange={this.handleFieldChange} />
-            <button type="button" onClick={this.submitQuestionnaire}>Create Profile</button>
-         </form>
+         <>
+            <div style={{width: "400px", margin: "8px auto"}}>
+               <form>
+                  <QuestionnaireField label="Favorite Artist" name="favoriteArtist" onValueChange={this.handleFieldChange} />
+                  <QuestionnaireField label="Favorite Album/EP" name="favoriteAlbumEp" onValueChange={this.handleFieldChange} />
+                  <QuestionnaireField label="Favorite Track" name="favoriteTrack" onValueChange={this.handleFieldChange} />
+                  <QuestionnaireField label="First Show" name="firstShow" onValueChange={this.handleFieldChange} />
+                  <QuestionnaireField label="Most Recent Show" name="mostRecentShow" onValueChange={this.handleFieldChange} />
+                  <QuestionnaireField label="Favorite Show" name="favoriteShow" onValueChange={this.handleFieldChange} />
+                  <button className="Questionnaire-button" type="button" onClick={this.submitQuestionnaire}>Create Profile</button>
+               </form>
+            </div>
+         </>
       );
    }
 }

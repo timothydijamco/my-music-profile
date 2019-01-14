@@ -18,7 +18,6 @@ class Profile extends Component {
    }
 
    componentDidMount() {
-      document.body.style = "background: #333333"; // TODO: Find a better way to do this
       this.getProfile();
    }
 

@@ -1,0 +1,11 @@
+.Questionnaire-button {
+   padding: 24px 48px;
+   background: #4570B5;
+   border: none;
+   color: white;
+   font-size: 10pt;
+}
+
+.Questionnaire-button:hover {
+   background: #4C79C2;
+}

@@ -1,0 +1,23 @@
+.QuestionnaireField {
+   margin: 32px 0px;
+}
+
+.QuestionnaireField-label {
+   margin-bottom: 16px;
+   color: white;
+   font-size: 18pt;
+   font-weight: 300;
+}
+
+.QuestionnaireField-input {
+   width: 100%;
+   padding: 16px;
+   background: #555555;
+   border: none;
+   color: white;
+   font-size: 14pt;
+}
+
+.QuestionnaireField-input:hover {
+   background: #5E5E5E;
+}
