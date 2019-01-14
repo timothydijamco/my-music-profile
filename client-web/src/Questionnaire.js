@@ -20,7 +20,7 @@ class Questionnaire extends Component {
    submitQuestionnaire() {
       axios.post("/api/profile", this.state)
          .then(res => {
-            window.location = "/" + res.data.code;
+            window.location = "/profile/" + res.data.code;
          })
          .catch(err => console.log(err));
    }
