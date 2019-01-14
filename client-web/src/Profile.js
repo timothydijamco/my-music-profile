@@ -18,7 +18,7 @@ class Profile extends Component {
    }
 
    componentDidMount() {
-      document.body.style = "background: #333333";
+      document.body.style = "background: #333333"; // TODO: Find a better way to do this
       this.getProfile();
    }
 
@@ -40,7 +40,7 @@ class Profile extends Component {
    render() {
       return (
          <>
-            <div style={{width: "800px", margin: "0 auto"}}>
+            <div style={{width: "800px", margin: "8px auto"}}>
                <BlockColumn width="400" side="left">
                   <Block label="Favorite Artist" width="400" height="400" backgroundColor="#488294">{this.state.favoriteArtist}</Block>
                   <Block label="First Show" width="400" height="150" backgroundColor="#3F428A">{this.state.firstShow}</Block>
@@ -49,7 +49,7 @@ class Profile extends Component {
                <BlockColumn width="400" side="right">
                   <Block label="Favorite Track" width="400" height="200" backgroundColor="#254B66">{this.state.favoriteTrack}</Block>
                   <Block label="Favorite Album/EP" width="400" height="300" backgroundColor="#31517A">{this.state.favoriteAlbumEp}</Block>
-                  <Block label="Favorite Show" width="400" height="200" backgroundColor="#612F8A">{this.state.favoriteShow}</Block>
+                  <Block label="Favorite Show" width="400" height="200" backgroundColor="#6B438C">{this.state.favoriteShow}</Block>
                </BlockColumn>
             </div>
          </>
